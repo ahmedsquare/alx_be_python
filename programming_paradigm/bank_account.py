@@ -3,17 +3,14 @@ class BankAccount:
         self.account_balance = balance
 
     def deposit(self, amount)->None:
-        self.account_balance += float(amount)
-        print(f"Deposited: ${amount:.1f}")
+        self.account_balance += amount
 
 
     def withdraw(self, amount)->bool:
         if(amount > self.account_balance):
-            print("Insufficient funds.")
             return False
         else:
             self.account_balance -= amount 
-            print(f"Withdrew: ${amount:.1f}")
             return True
 
 
