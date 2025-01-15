@@ -2,12 +2,12 @@ class BankAccount:
     def __init__(self, balance = 0):
         self.account_balance = balance
 
-    def deposit(self, amount)->None:
+    def deposit(self, amount:float)->None:
         self.account_balance += amount
         print(f"Deposited: ${amount:.1f}")
 
 
-    def withdraw(self, amount)->bool:
+    def withdraw(self, amount:float)->bool:
         if(amount > self.account_balance):
             print("Insufficient funds.")
             return False
