@@ -3,8 +3,10 @@ class Book:
         self.title = Title
         self.author = Author
         self.__is_checked_out = True
-    def setCheckout(self,Availabality):
-        self.__is_checked_out = Availabality
+    def check_out(self):
+        self.__is_checked_out = False
+    def return_book(self):
+        self.__is_checked_out = True
     def get__is_checked_out(self):
         return self.__is_checked_out
 class Library:
@@ -17,12 +19,12 @@ class Library:
     def check_out_book(self,Title):
         for book in self.__books:
             if book.title == Title:
-                book.setCheckout(False)
+                book.check_out()
 
     def return_book(self,Title):
         for book in self.__books:
             if book.title == Title:
-                book.setCheckout(True)
+                book.return_book()
 
     def list_available_books(self):
         for book in self.__books:
