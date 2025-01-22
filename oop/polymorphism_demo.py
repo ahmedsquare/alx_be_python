@@ -1,9 +1,11 @@
 import math
+from abc import ABC, abstractmethod
 
 
 class Shape:
+    @abstractmethod
     def area(self):
-        pass
+        raise NotImplementedError("Subclasses must override the area method")
 
 class Rectangle(Shape):
     def __init__(self, length, width):
